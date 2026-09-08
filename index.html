@@ -1,6 +1,3 @@
-Below is a clean single-page site layout design built using standard HTML and CSS. It features a modern layout matching typical Irish accounting firm sites (navigation, hero banner, core sections, principal bio, and contact footer) while using the color palette from the Pivotal Accounting logo (navy blue `#102B4E` with subtle slate accents).
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +12,7 @@ Below is a clean single-page site layout design built using standard HTML and CS
       --text-dark: #222222;
       --text-muted: #555555;
       --bg-light: #F8FAFC;
+      --bg-warm: #F7F5F0;
       --white: #FFFFFF;
     }
 
@@ -49,21 +47,15 @@ Below is a clean single-page site layout design built using standard HTML and CS
       align-items: center;
     }
 
-    .logo-text {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      letter-spacing: -0.5px;
+    .logo-container {
+      display: flex;
+      align-items: center;
     }
 
-    .logo-subtext {
+    .logo-img {
+      height: 55px;
+      width: auto;
       display: block;
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      text-transform: uppercase;
     }
 
     nav ul {
@@ -87,13 +79,22 @@ Below is a clean single-page site layout design built using standard HTML and CS
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       color: var(--white);
-      padding: 5rem 2rem;
+      padding: 5rem 2rem 3rem 2rem;
       text-align: center;
     }
 
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    .hero-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #A0AEC0;
+      margin-bottom: 0.5rem;
     }
 
     .hero h1 {
@@ -108,6 +109,14 @@ Below is a clean single-page site layout design built using standard HTML and CS
       opacity: 0.9;
     }
 
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
     .btn {
       display: inline-block;
       background: var(--white);
@@ -116,11 +125,153 @@ Below is a clean single-page site layout design built using standard HTML and CS
       border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
-      transition: opacity 0.2s;
+      border: 2px solid var(--white);
+      transition: all 0.2s;
     }
 
     .btn:hover {
       opacity: 0.9;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+    }
+
+    /* Trust Highlights Bar */
+    .hero-features {
+      background-color: var(--white);
+      border-top: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 1.25rem 2rem;
+    }
+
+    .features-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .feature-item svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary);
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Human Touch Section */
+    .human-touch-section {
+      background-color: var(--bg-warm);
+      padding: 5rem 2rem;
+    }
+
+    .human-touch-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .human-touch-title {
+      font-size: 2.3rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .value-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .value-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .value-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      background-color: var(--secondary);
+      border-radius: 50%;
+    }
+
+    .value-item h4 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .value-item p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .quote-box {
+      border-left: 3px solid var(--secondary);
+      padding-left: 1rem;
+      text-align: left;
+      font-style: italic;
+      color: var(--text-dark);
+      font-size: 0.95rem;
     }
 
     /* Layout Sections */
@@ -230,6 +381,15 @@ Below is a clean single-page site layout design built using standard HTML and CS
       .hero h1 {
         font-size: 2rem;
       }
+
+      .features-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .human-touch-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -238,10 +398,10 @@ Below is a clean single-page site layout design built using standard HTML and CS
   <!-- Header -->
   <header>
     <div class="nav-container">
-      <div>
+      <div class="logo-container">
         <a href="#">
-        <img src="logo.png" alt="Pivotal Accounting, Tax, Advisory" style="height: 55px; width: auto; display: block;">
-      </a>
+          <img src="logo.png" alt="Pivotal Accounting, Tax, Advisory" class="logo-img">
+        </a>
       </div>
       <nav>
         <ul>
@@ -258,9 +418,91 @@ Below is a clean single-page site layout design built using standard HTML and CS
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
+      <p class="hero-subtitle">Friendly, professional accountancy</p>
       <h1>Accounting & Advisory for Growing Businesses</h1>
       <p>Tailored accounting and strategic advisory services based in Maynooth, Co. Kildare.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn">Get in Touch</a>
+        <a href="#why-us" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Highlights Bar -->
+  <div class="hero-features">
+    <div class="features-container">
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+        <span>Qualified & Chartered</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Small & large businesses</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Flexible appointments</span>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Fully confidential</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Human Touch Section -->
+  <section class="human-touch-section">
+    <div class="container">
+      <div class="human-touch-grid">
+        <div>
+          <p class="section-eyebrow">WHY PIVOTAL?</p>
+          <h2 class="human-touch-title">Accountancy with a<br>human touch</h2>
+          
+          <ul class="value-list">
+            <li class="value-item">
+              <h4>Plain English, always</h4>
+              <p>No confusing jargon — just clear, honest advice you can actually act on.</p>
+            </li>
+            <li class="value-item">
+              <h4>Responsive & reliable</h4>
+              <p>You'll always hear back quickly. Pivotal treats your deadlines like our own.</p>
+            </li>
+            <li class="value-item">
+              <h4>Tailored to your business</h4>
+              <p>No one-size-fits-all packages. Services are shaped around what you actually need.</p>
+            </li>
+            <li class="value-item">
+              <h4>Transparent pricing</h4>
+              <p>Know exactly what you're paying before any work begins. No nasty surprises.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="stat-card">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Years helping businesses grow with confidence</div>
+            <div class="quote-box">
+              "Barry from Pivotal turned what I dreaded into something I actually understand. Brilliant service."
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -270,13 +512,13 @@ Below is a clean single-page site layout design built using standard HTML and CS
       <h2 class="section-title">Who We Are</h2>
       <p>Pivotal Accounting Services is a boutique accounting and business advisory firm based in Maynooth, Co. Kildare[cite: 1].</p>
       <br>
-      <p>We provide tailored accounting and business advisory services to SMEs and owner-managed businesses[cite: 1]. With over 20 years’ experience working closely with businesses and their owners, we understand the importance of having accurate, up-to-date financial information when you need it[cite: 1].</p>
+      <p>We offer friendly, professional accountancy tailored to SMEs and owner-managed businesses[cite: 1]. With over 20 years’ experience working closely with businesses and their owners, we understand the importance of having accurate, up-to-date financial information when you need it[cite: 1].</p>
       <br>
       <p>Our role goes beyond simply preparing accounts[cite: 1]. We work alongside you to provide the insight, advice, and support you need to make informed decisions and move your business forward with confidence[cite: 1].</p>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
+  <!-- Why Choose Us / Services -->
   <section id="why-us" class="bg-light">
     <div class="container">
       <h2 class="section-title">Why Choose Pivotal Accounting Services?</h2>
@@ -320,7 +562,7 @@ Below is a clean single-page site layout design built using standard HTML and CS
     <div class="container">
       <h2 class="section-title">Principal Profile</h2>
       <h3>Barry Smyth BBS ACA</h3>
-      <p><em>Founder and Managing Partner</em></p>
+      <p><em>Founder and Managing Partner</em>[cite: 1]</p>
       <br>
       <p>Barry is the founder and Managing Partner of Pivotal Accounting[cite: 1]. Having completed a Bachelor of Business Studies, he began working in the Taxation division of a medium-sized accounting firm while completing his Institute of Chartered Accountants exams[cite: 1]. He later moved to senior financial roles in the SME market, serving as Financial Controller and Group Finance Director[cite: 1].</p>
       <br>
@@ -350,7 +592,7 @@ Below is a clean single-page site layout design built using standard HTML and CS
         <br>
         <p>If you're looking for an accountant who is approachable, responsive, and genuinely interested in your business, talk to us today[cite: 1].</p>
         <br>
-        <p>Email us at: <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a></p>
+        <p>Email us at: <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a>[cite: 1]</p>
       </div>
     </div>
   </section>
@@ -362,5 +604,3 @@ Below is a clean single-page site layout design built using standard HTML and CS
 
 </body>
 </html>
-
-```

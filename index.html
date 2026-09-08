@@ -6,7 +6,7 @@
   <title>Pivotal Accounting Services | Maynooth, Co. Kildare</title>
   
   <!-- Pivotal Circular Arrow Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23102B4E' stroke-width='10' stroke-linecap='round'><path d='M 50,15 A 35,35 0 0 1 85,50 L 95,40 M 85,50 L 75,40'/><path d='M 50,85 A 35,35 0 0 1 15,50 L 5,60 M 15,50 L 25,60'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M 22 58 A 32 32 0 0 0 82 52 L 82 66 L 98 48 L 74 38 L 78 50 A 22 22 0 0 1 30 58 Z' fill='%23102B4E'/><path d='M 78 42 A 32 32 0 0 0 18 48 L 18 34 L 2 52 L 26 62 L 22 50 A 22 22 0 0 1 70 42 Z' fill='%235A6B82'/></svg>">
 
   <style>
     :root {
@@ -189,34 +189,11 @@
       flex-shrink: 0;
     }
 
-    /* Human Touch Section with Watermark Background */
-    .human-touch-section {
+    /* Combined Why Us & Human Touch Section */
+    .why-us-section {
       background-color: #E2E8F0;
       padding: 5rem 2rem;
       border-bottom: 1px solid var(--grey-border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .human-touch-section::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -40px;
-      width: 320px;
-      height: 320px;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="%232C4D75" stroke-width="5"><path d="M 50,10 A 40,40 0 0 1 90,50 L 98,42 M 90,50 L 82,42"/><path d="M 50,90 A 40,40 0 0 1 10,50 L 2,58 M 10,50 L 18,58"/></svg>');
-      background-repeat: no-repeat;
-      background-size: contain;
-      opacity: 0.08;
-      pointer-events: none;
-    }
-
-    .human-touch-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
-      align-items: center;
     }
 
     .section-eyebrow {
@@ -228,11 +205,24 @@
       margin-bottom: 0.5rem;
     }
 
-    .human-touch-title {
+    .why-us-title {
       font-size: 2.3rem;
       color: var(--primary);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       line-height: 1.2;
+    }
+
+    .why-us-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 2.5rem;
+    }
+
+    .human-touch-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
     }
 
     .value-list {
@@ -242,20 +232,20 @@
       gap: 1.5rem;
     }
 
-    /* Custom Pivotal Arrow Bullet */
+    /* Two-Tone Pivotal Logo "O" Arrow Bullet */
     .value-item {
       position: relative;
-      padding-left: 2.2rem;
+      padding-left: 2.4rem;
     }
 
     .value-item::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.2rem;
-      width: 20px;
-      height: 20px;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="%232C4D75" stroke-width="12" stroke-linecap="round"><path d="M 50,15 A 35,35 0 0 1 85,50 L 95,40 M 85,50 L 75,40"/><path d="M 50,85 A 35,35 0 0 1 15,50 L 5,60 M 15,50 L 25,60"/></svg>');
+      top: 0.15rem;
+      width: 22px;
+      height: 22px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 22 58 A 32 32 0 0 0 82 52 L 82 66 L 98 48 L 74 38 L 78 50 A 22 22 0 0 1 30 58 Z" fill="%23102B4E"/><path d="M 78 42 A 32 32 0 0 0 18 48 L 18 34 L 2 52 L 26 62 L 22 50 A 22 22 0 0 1 70 42 Z" fill="%235A6B82"/></svg>');
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -329,26 +319,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 3rem;
-    }
-
-    /* Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-card {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 6px;
-      border: 1px solid var(--grey-border);
-    }
-
-    .feature-card h3 {
-      color: var(--primary);
-      margin-bottom: 0.75rem;
     }
 
     /* Industry Tags */
@@ -518,7 +488,7 @@
     <div class="nav-container">
       <div class="logo-container">
         <a href="#">
-          <img src="logo.JPG" alt="Pivotal Accounting, Tax, Advisory" class="logo-img">
+          <img src="logo.jpg" alt="Pivotal Accounting, Tax, Advisory" class="logo-img">
         </a>
       </div>
       <nav>
@@ -541,7 +511,7 @@
       <p>Tailored accounting and strategic advisory services based in Maynooth, Co. Kildare.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn">Get in Touch</a>
-        <a href="#why-us" class="btn btn-outline">Our Services</a>
+        <a href="#why-us" class="btn btn-outline">Why Choose Us</a>
       </div>
     </div>
   </section>
@@ -583,30 +553,43 @@
     </div>
   </div>
 
-  <!-- Human Touch Section -->
-  <section class="human-touch-section">
+  <!-- Who We Are -->
+  <section id="about">
     <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p>Pivotal Accounting Services is a boutique accounting and business advisory firm based in Maynooth, Co. Kildare.</p>
+      <br>
+      <p>We offer friendly, professional accountancy tailored to SMEs and owner-managed businesses. With over 20 years’ experience working closely with businesses and their owners, we understand the importance of having accurate, up-to-date financial information when you need it.</p>
+      <br>
+      <p>Our role goes beyond simply preparing accounts. We work alongside you to provide the insight, advice, and support you need to make informed decisions and move your business forward with confidence.</p>
+    </div>
+  </section>
+
+  <!-- Combined Why Pivotal / Why Choose Us Section -->
+  <section id="why-us" class="why-us-section">
+    <div class="container">
+      <p class="section-eyebrow">OUR MISSION</p>
+      <h2 class="why-us-title">Why Choose Pivotal Accounting Services?</h2>
+      <p class="why-us-subtitle">Our mission is simple: <strong>to make running your business easier.</strong> Accountancy with a human touch.</p>
+      
       <div class="human-touch-grid">
         <div>
-          <p class="section-eyebrow">WHY PIVOTAL?</p>
-          <h2 class="human-touch-title">Accountancy with a<br>human touch</h2>
-          
           <ul class="value-list">
             <li class="value-item">
-              <h4>Plain English, always</h4>
-              <p>No confusing jargon — just clear, honest advice you can actually act on.</p>
+              <h4>Regular & Responsive Communication</h4>
+              <p>Accounting shouldn't be limited to an annual meeting. We focus on regular contact by phone, email, or in person, and pride ourselves on being quick, approachable, and solutions-focused.</p>
             </li>
             <li class="value-item">
-              <h4>Responsive & reliable</h4>
-              <p>You'll always hear back quickly. Pivotal treats your deadlines like our own.</p>
+              <h4>Plain English, Always</h4>
+              <p>No confusing jargon — just clear, practical, and straightforward advice you can actually act on.</p>
             </li>
             <li class="value-item">
-              <h4>Tailored to your business</h4>
-              <p>No one-size-fits-all packages. Services are shaped around what you actually need.</p>
+              <h4>Built for Business Flexibility</h4>
+              <p>In an ever-changing economy, rigid structures hold businesses back. At Pivotal, we help you set up the right foundations while providing the flexibility to adapt and pivot when market conditions change.</p>
             </li>
             <li class="value-item">
-              <h4>Transparent pricing</h4>
-              <p>Know exactly what you're paying before any work begins. No nasty surprises.</p>
+              <h4>Tailored Solutions & Transparent Pricing</h4>
+              <p>No one-size-fits-all packages. Services are shaped around your specific needs with agreed fees upfront — no nasty surprises.</p>
             </li>
           </ul>
         </div>
@@ -624,53 +607,18 @@
     </div>
   </section>
 
-  <!-- Who We Are -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">Who We Are</h2>
-      <p>Pivotal Accounting Services is a boutique accounting and business advisory firm based in Maynooth, Co. Kildare[cite: 1].</p>
-      <br>
-      <p>We offer friendly, professional accountancy tailored to SMEs and owner-managed businesses[cite: 1]. With over 20 years’ experience working closely with businesses and their owners, we understand the importance of having accurate, up-to-date financial information when you need it[cite: 1].</p>
-      <br>
-      <p>Our role goes beyond simply preparing accounts[cite: 1]. We work alongside you to provide the insight, advice, and support you need to make informed decisions and move your business forward with confidence[cite: 1].</p>
-    </div>
-  </section>
-
-  <!-- Why Choose Us / Services -->
-  <section id="why-us" class="bg-light">
-    <div class="container">
-      <h2 class="section-title">Why Choose Pivotal Accounting Services?</h2>
-      <p>Our mission is simple: <strong>to make running your business easier[cite: 1].</strong></p>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Regular Communication</h3>
-          <p>We believe accounting should be about much more than an annual meeting to review financial statements[cite: 1]. Whether by phone, email, or in person, we focus on regular contact to keep up to date with your progress[cite: 1].</p>
-        </div>
-        <div class="feature-card">
-          <h3>Business Flexibility</h3>
-          <p>In an ever-changing economy, a rigid approach makes it harder to respond to challenges[cite: 1]. We help you put the right structures in place while giving you the flexibility to adapt and pivot[cite: 1].</p>
-        </div>
-        <div class="feature-card">
-          <h3>Responsive Service</h3>
-          <p>When you have a question, you want a clear answer quickly[cite: 1]. We pride ourselves on being responsive, approachable, and solutions-focused to keep your business moving forward[cite: 1].</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Pricing -->
   <section id="pricing">
     <div class="container grid-2">
       <div>
         <h2 class="section-title">Transparent, Flexible Pricing</h2>
-        <p>We believe professional advice should come with clear and transparent pricing[cite: 1]. Our fees are based on the complexity of the work involved and the time required to complete it[cite: 1].</p>
+        <p>We believe professional advice should come with clear and transparent pricing. Our fees are based on the complexity of the work involved and the time required to complete it.</p>
         <br>
-        <p>Before any work begins, we agree on the scope and associated fees with you so you know exactly what to expect[cite: 1]. If additional work becomes necessary, we discuss it and agree on the cost in advance[cite: 1]. No surprises[cite: 1].</p>
+        <p>Before any work begins, we agree on the scope and associated fees with you so you know exactly what to expect. If additional work becomes necessary, we discuss it and agree on the cost in advance. No surprises.</p>
       </div>
       <div>
         <h2 class="section-title">Spread Your Fees</h2>
-        <p>We understand that managing an annual accounting bill can be challenging for some businesses[cite: 1]. To make things easier, we offer flexible payment options, including the ability to spread your fees into instalments that suit your business[cite: 1].</p>
+        <p>We understand that managing an annual accounting bill can be challenging for some businesses. To make things easier, we offer flexible payment options, including the ability to spread your fees into instalments that suit your business.</p>
       </div>
     </div>
   </section>
@@ -680,11 +628,11 @@
     <div class="container">
       <h2 class="section-title">Principal Profile</h2>
       <h3>Barry Smyth BBS ACA</h3>
-      <p><em>Founder and Managing Partner</em>[cite: 1]</p>
+      <p><em>Founder and Managing Partner</em></p>
       <br>
-      <p>Barry is the founder and Managing Partner of Pivotal Accounting[cite: 1]. Having completed a Bachelor of Business Studies, he began working in the Taxation division of a medium-sized accounting firm while completing his Institute of Chartered Accountants exams[cite: 1]. He later moved to senior financial roles in the SME market, serving as Financial Controller and Group Finance Director[cite: 1].</p>
+      <p>Barry is the founder and Managing Partner of Pivotal Accounting. Having completed a Bachelor of Business Studies, he began working in the Taxation division of a medium-sized accounting firm while completing his Institute of Chartered Accountants exams. He later moved to senior financial roles in the SME market, serving as Financial Controller and Group Finance Director.</p>
       <br>
-      <p>During his 20+ years working within the SME market, Barry gained extensive insight into what makes a business a success and the internal and external factors that challenge growth[cite: 1].</p>
+      <p>During his 20+ years working within the SME market, Barry gained extensive insight into what makes a business a success and the internal and external factors that challenge growth.</p>
       
       <h4 style="margin-top: 1.5rem; color: var(--primary);">Industry Experience Includes:</h4>
       <div class="industry-list">
@@ -714,7 +662,7 @@
 
           <div class="info-group">
             <label>Location</label>
-            <p>Maynooth, Co. Kildare[cite: 1]</p>
+            <p>Maynooth, Co. Kildare</p>
           </div>
 
           <div class="info-group">
@@ -724,7 +672,7 @@
 
           <div class="info-group">
             <label>Email</label>
-            <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a>[cite: 1]
+            <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a>
           </div>
 
           <div class="info-group">
@@ -771,7 +719,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; Pivotal Accounting Services. Maynooth, Co. Kildare[cite: 1]. All rights reserved.</p>
+    <p>&copy; Pivotal Accounting Services. Maynooth, Co. Kildare. All rights reserved.</p>
   </footer>
 
 </body>

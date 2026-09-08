@@ -293,6 +293,28 @@
       font-size: 0.95rem;
     }
 
+    /* Principal Profile Section */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .profile-img-container {
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 8px;
+      border: 1px solid var(--grey-border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      object-fit: cover;
+    }
+
     /* Layout Sections */
     section {
       padding: 4rem 2rem;
@@ -475,7 +497,7 @@
         align-items: flex-start;
       }
 
-      .human-touch-grid, .contact-container {
+      .human-touch-grid, .contact-container, .profile-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -507,7 +529,7 @@
   <section class="hero">
     <div class="hero-content">
       <p class="hero-subtitle">Friendly, professional accountancy</p>
-      <h1>Accounting, Tax & Advisory for Growing Businesses</h1>
+      <h1>Accounting & Advisory for Growing Businesses</h1>
       <p>Tailored accounting and strategic advisory services based in Maynooth, Co. Kildare.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn">Get in Touch</a>
@@ -627,24 +649,33 @@
   <section id="principal" class="bg-light">
     <div class="container">
       <h2 class="section-title">Principal Profile</h2>
-      <h3>Barry Smyth BBS ACA</h3>
-      <p><em>Founder and Managing Partner</em></p>
-      <br>
-      <p>Barry is the founder and Managing Partner of Pivotal Accounting. Having completed a Bachelor of Business Studies, he began working in the Taxation division of a medium-sized accounting firm while completing his Institute of Chartered Accountants exams. He later moved to senior financial roles in the SME market, serving as Financial Controller and Group Finance Director.</p>
-      <br>
-      <p>During his 20+ years working within the SME market, Barry gained extensive insight into what makes a business a success and the internal and external factors that challenge growth.</p>
       
-      <h4 style="margin-top: 1.5rem; color: var(--primary);">Industry Experience Includes:</h4>
-      <div class="industry-list">
-        <span class="tag">Construction</span>
-        <span class="tag">Sales & Distribution</span>
-        <span class="tag">Waste Management</span>
-        <span class="tag">Recruitment</span>
-        <span class="tag">Catering & Services</span>
-        <span class="tag">Motor Industry</span>
-        <span class="tag">Manufacturing</span>
-        <span class="tag">Printing Industry</span>
-        <span class="tag">Security & Cleaning</span>
+      <div class="profile-grid">
+        <div class="profile-img-container">
+          <img src="barry.jpg" alt="Barry Smyth BBS ACA" class="profile-img">
+        </div>
+
+        <div>
+          <h3>Barry Smyth BBS ACA</h3>
+          <p><em>Founder and Managing Partner</em></p>
+          <br>
+          <p>Barry is the founder and Managing Partner of Pivotal Accounting. Having completed a Bachelor of Business Studies, he began working in the Taxation division of a medium-sized accounting firm while completing his Institute of Chartered Accountants exams. He later moved to senior financial roles in the SME market, serving as Financial Controller and Group Finance Director.</p>
+          <br>
+          <p>During his 20+ years working within the SME market, Barry gained extensive insight into what makes a business a success and the internal and external factors that challenge growth.</p>
+          
+          <h4 style="margin-top: 1.5rem; color: var(--primary);">Industry Experience Includes:</h4>
+          <div class="industry-list">
+            <span class="tag">Construction</span>
+            <span class="tag">Sales & Distribution</span>
+            <span class="tag">Waste Management</span>
+            <span class="tag">Recruitment</span>
+            <span class="tag">Catering & Services</span>
+            <span class="tag">Motor Industry</span>
+            <span class="tag">Manufacturing</span>
+            <span class="tag">Printing Industry</span>
+            <span class="tag">Security & Cleaning</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

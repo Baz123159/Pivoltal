@@ -127,6 +127,7 @@
       font-weight: 600;
       border: 2px solid var(--white);
       transition: all 0.2s;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -339,23 +340,104 @@
       font-weight: 500;
     }
 
-    /* Contact Callout */
-    .cta-box {
-      background: var(--primary);
-      color: var(--white);
-      padding: 3rem;
-      border-radius: 8px;
-      text-align: center;
+    /* Contact Section Styling */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
     }
 
-    .cta-box h2 {
+    .contact-info-card {
+      background: var(--primary);
+      color: var(--white);
+      padding: 2.5rem;
+      border-radius: 8px;
+    }
+
+    .contact-info-card h3 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
-    .cta-box a {
+    .info-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .info-group label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #A0AEC0;
+      margin-bottom: 0.2rem;
+    }
+
+    .info-group a, .info-group p {
       color: var(--white);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .qr-card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .qr-card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 6px;
+      background: var(--white);
+      padding: 6px;
+      margin-top: 0.75rem;
+    }
+
+    /* Contact Form Styling */
+    .contact-form-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #CBD5E0;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      width: 100%;
     }
 
     /* Footer */
@@ -387,7 +469,7 @@
         align-items: flex-start;
       }
 
-      .human-touch-grid {
+      .human-touch-grid, .contact-container {
         grid-template-columns: 1fr;
       }
     }
@@ -400,7 +482,7 @@
     <div class="nav-container">
       <div class="logo-container">
         <a href="#">
-          <img src="logo.jpg" alt="Pivotal Accounting, Tax, Advisory" class="logo-img">
+          <img src="logo.JPG" alt="Pivotal Accounting, Tax, Advisory" class="logo-img">
         </a>
       </div>
       <nav>
@@ -583,16 +665,70 @@
     </div>
   </section>
 
-  <!-- Contact Callout -->
+  <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <div class="cta-box">
-        <h2>Thinking of Changing Accountants?</h2>
-        <p>Changing accountants doesn't have to be complicated[cite: 1]. We will take care of the transition to ensure a smooth, stress-free handover[cite: 1].</p>
-        <br>
-        <p>If you're looking for an accountant who is approachable, responsive, and genuinely interested in your business, talk to us today[cite: 1].</p>
-        <br>
-        <p>Email us at: <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a>[cite: 1]</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <p>Thinking of changing accountants or starting a new query? Talk to us today[cite: 1].</p>
+
+      <div class="contact-container">
+        <!-- Contact Details -->
+        <div class="contact-info-card">
+          <h3>Contact Details</h3>
+
+          <div class="info-group">
+            <label>Location</label>
+            <p>Maynooth, Co. Kildare[cite: 1]</p>
+          </div>
+
+          <div class="info-group">
+            <label>Phone</label>
+            <a href="tel:+353876657896">+353 87 6657896</a>
+          </div>
+
+          <div class="info-group">
+            <label>Email</label>
+            <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a>[cite: 1]
+          </div>
+
+          <div class="info-group">
+            <label>Opening Hours</label>
+            <p>Mon–Fri, 9am – 5:30pm</p>
+          </div>
+
+          <!-- QR Code Download -->
+          <div class="qr-card">
+            <p style="font-size: 0.85rem; color: #A0AEC0;">Scan with mobile camera to save contact profile</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ASmyth%3BBarry%0AFN%3ABarry%20Smyth%0AORG%3APivotal%20Accounting%20Services%0ATEL%3BTYPE%3DCELL%3A%2B353876657896%0AEMAIL%3Ainfo%40pivotalaccounting.ie%0AADR%3A%3B%3BMaynooth%3BCo.%20Kildare%3B%3B%3BIreland%0AEND%3AVCARD" alt="Scan to save contact details">
+          </div>
+        </div>
+
+        <!-- Contact Form (Formspree Endpoint) -->
+        <div class="contact-form-card">
+          <form action="https://formspree.io/f/info@pivotalaccounting.ie" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+353 ...">
+            </div>
+
+            <div class="form-group">
+              <label for="message">How can we help you?</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your business or query..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>

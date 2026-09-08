@@ -1,29 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Primary Search Engine Meta Tags -->
-<meta name="description" content="Pivotal Accounting Services provides boutique accounting, tax, and business advisory services to SMEs and owner-managed businesses in Maynooth, Co. Kildare. Over 20 years experience.">
-<meta name="keywords" content="accountant Maynooth, accountants Kildare, tax advisory Maynooth, SME accounting Ireland, Barry Smyth accountant, business advisors Kildare, Pivotal Accounting">
-<meta name="author" content="Barry Smyth BBS ACA">
-<meta name="robots" content="index, follow">
-
-<!-- Geographic & Local Search Meta Tags -->
-<meta name="geo.region" content="IE-KE">
-<meta name="geo.placename" content="Maynooth">
-<meta name="geo.position" content="53.3814;-6.5918">
-<meta name="ICBM" content="53.3814, -6.5918">
-
-<!-- Social Media Preview Tags (Open Graph) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pivotal Accounting Services | Maynooth, Co. Kildare">
-<meta property="og:description" content="Friendly, Professional Accounting and Business Advisory for SMEs and growing businesses in Maynooth and Kildare.">
-<meta property="og:url" content="https://www.pivotalaccounting.ie">
-<meta property="og:image" content="https://www.pivotalaccounting.ie/logo.jpg">
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pivotal Accounting Services | Maynooth, Co. Kildare</title>
   
+  <!-- SEO & Local Business Meta Tags -->
+  <meta name="description" content="Pivotal Accounting Services provides boutique accounting, tax, and business advisory services to SMEs in Maynooth, Co. Kildare. Over 20 years experience.">
+  <meta name="keywords" content="accountant Maynooth, accountants Kildare, tax advisory Maynooth, SME accounting Ireland, Barry Smyth accountant, business advisors Kildare">
+  <meta name="author" content="Barry Smyth BBS ACA">
+  <meta name="robots" content="index, follow">
+
   <!-- Pivotal Circular Arrow Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M 22 58 A 32 32 0 0 0 82 52 L 82 66 L 98 48 L 74 38 L 78 50 A 22 22 0 0 1 30 58 Z' fill='%23102B4E'/><path d='M 78 42 A 32 32 0 0 0 18 48 L 18 34 L 2 52 L 26 62 L 22 50 A 22 22 0 0 1 70 42 Z' fill='%235A6B82'/></svg>">
 
@@ -68,6 +55,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .logo-container {
@@ -76,29 +64,53 @@
     }
 
     .logo-img {
-      height: 95px;
+      height: 85px;
       width: auto;
-      max-width: 340px;
+      max-width: 300px;
       object-fit: contain;
       display: block;
       mix-blend-mode: multiply;
     }
 
-    nav ul {
+    /* Desktop Navigation */
+    .nav-menu {
       display: flex;
       list-style: none;
       gap: 2rem;
     }
 
-    nav a {
+    .nav-menu a {
       text-decoration: none;
       color: var(--primary);
       font-weight: 600;
       transition: color 0.2s;
     }
 
-    nav a:hover {
+    .nav-menu a:hover {
       color: var(--grey-slate);
+    }
+
+    /* Hamburger Toggle (Hidden by default on Desktop) */
+    .menu-toggle {
+      display: none;
+    }
+
+    .hamburger-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger-btn span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
     /* Hero Section */
@@ -208,7 +220,59 @@
       flex-shrink: 0;
     }
 
-    /* Combined Why Us & Human Touch Section */
+    /* About Pillars Single-Row Grid */
+    .about-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .about-pillar-card {
+      background: var(--white);
+      padding: 1.75rem 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--grey-border);
+      box-shadow: 0 4px 12px rgba(16, 43, 78, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pillar-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background-color: var(--grey-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      border: 1px solid var(--grey-border);
+    }
+
+    .pillar-icon-wrapper svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--primary);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .about-pillar-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-pillar-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Combined Why Us Section */
     .why-us-section {
       background-color: #E2E8F0;
       padding: 5rem 2rem;
@@ -251,24 +315,23 @@
       gap: 1.5rem;
     }
 
-    /* High-Sharpness Two-Tone Pivotal Bullet Icons */
-.value-item {
-  position: relative;
-  padding-left: 2.6rem;
-}
+    /* High-Sharpness Bullet Icons */
+    .value-item {
+      position: relative;
+      padding-left: 2.8rem;
+    }
 
-.value-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.15rem;
-  width: 24px;
-  height: 24px;
-  /* SVG: Clean crisp circular arrows using primary navy (#102B4E) and slate grey (#5A6B82) */
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke="%235A6B82"/><path d="M 8 12 L 11 15 L 16 9" stroke="%23102B4E"/></svg>');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+    .value-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 28px;
+      height: 28px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 18 56 A 34 34 0 0 0 84 50 L 84 66 L 100 48 L 74 36 L 80 48 A 22 22 0 0 1 28 56 Z" fill="%23102B4E"/><path d="M 82 44 A 34 34 0 0 0 16 50 L 16 34 L 0 52 L 26 64 L 20 52 A 22 22 0 0 1 72 44 Z" fill="%235A6B82"/></svg>');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
     .value-item h4 {
       font-size: 1.1rem;
@@ -498,14 +561,61 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 1rem;
+    /* Mobile Hamburger Responsive Styles */
+    @media (max-width: 850px) {
+      .hamburger-btn {
+        display: flex;
       }
-      
-      nav ul {
-        gap: 1rem;
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        border-bottom: 2px solid var(--grey-border);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .nav-menu li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-menu a {
+        display: block;
+        padding: 1rem;
+        border-top: 1px solid var(--grey-light);
+      }
+
+      /* When checkbox is checked, expand menu */
+      .menu-toggle:checked ~ .nav-menu {
+        max-height: 350px;
+      }
+
+      /* Animate Hamburger into an "X" when open */
+      .menu-toggle:checked ~ .hamburger-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+      .menu-toggle:checked ~ .hamburger-btn span:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle:checked ~ .hamburger-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+
+      .about-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .human-touch-grid, .contact-container, .profile-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero h1 {
@@ -516,118 +626,8 @@
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .human-touch-grid, .contact-container, .profile-grid {
-        grid-template-columns: 1fr;
-      }
     }
-    /* About Highlights Single-Row Grid */
-.about-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.about-pillar-card {
-  background: var(--white);
-  padding: 1.75rem 1.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--grey-border);
-  box-shadow: 0 4px 12px rgba(16, 43, 78, 0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.about-pillar-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(16, 43, 78, 0.08);
-}
-
-.pillar-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  background-color: var(--grey-light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  border: 1px solid var(--grey-border);
-}
-
-.pillar-icon-wrapper svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--primary);
-  stroke-width: 2;
-  fill: none;
-}
-
-.about-pillar-card h3 {
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.about-pillar-card p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* Responsive adjustment for tablets & mobile */
-@media (max-width: 850px) {
-  .about-pillars-grid {
-    grid-template-columns: 1fr;
-  }
-}
   </style>
-  <!-- Google Local Business Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "name": "Pivotal Accounting Services",
-  "image": "https://www.pivotalaccounting.ie/logo.jpg",
-  "@id": "https://www.pivotalaccounting.ie",
-  "url": "https://www.pivotalaccounting.ie",
-  "telephone": "+353876657896",
-  "email": "info@pivotalaccounting.ie",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Maynooth",
-    "addressRegion": "Co. Kildare",
-    "addressCountry": "IE"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 53.3814,
-    "longitude": -6.5918
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "17:30"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Barry Smyth",
-    "jobTitle": "Managing Partner",
-    "alumniOf": "Chartered Accountants Ireland"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -639,8 +639,17 @@
           <img src="logo.jpg" alt="Pivotal Accounting, Tax, Advisory" class="logo-img">
         </a>
       </div>
+
+      <!-- Pure CSS Hamburger Checkbox Toggle -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger-btn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
       <nav>
-        <ul>
+        <ul class="nav-menu">
           <li><a href="#about">Who We Are</a></li>
           <li><a href="#why-us">Why Choose Us</a></li>
           <li><a href="#pricing">Pricing</a></li>
@@ -655,7 +664,7 @@
   <section class="hero">
     <div class="hero-content">
       <p class="hero-subtitle">Friendly, Professional Accountancy</p>
-      <h1>Accounting, Tax & Advisory for Growing Businesses</h1>
+      <h1>Accounting & Advisory for Growing Businesses</h1>
       <p>Tailored accounting and strategic advisory services based in Maynooth, Co. Kildare.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn">Get in Touch</a>
@@ -701,7 +710,6 @@
     </div>
   </div>
 
-  <!-- Who We Are -->
   <!-- About Pivotal Accounting Section -->
   <section id="about" class="bg-light">
     <div class="container">
@@ -721,13 +729,10 @@
         </p>
       </div>
 
-      <!-- Single-Row Capability Pillars with Icons -->
+      <!-- Single-Row Capability Pillars -->
       <div class="about-pillars-grid">
-        
-        <!-- Pillar 1 -->
         <div class="about-pillar-card">
           <div class="pillar-icon-wrapper">
-            <!-- Award/Trust Icon -->
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="8" r="6"></circle>
               <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
@@ -737,10 +742,8 @@
           <p>Decades of commercial experience serving diverse Irish industries and owner-managed firms.</p>
         </div>
 
-        <!-- Pillar 2 -->
         <div class="about-pillar-card">
           <div class="pillar-icon-wrapper">
-            <!-- Strategic Growth/Chart Icon -->
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="20" x2="18" y2="10"></line>
               <line x1="12" y1="20" x2="12" y2="4"></line>
@@ -751,10 +754,8 @@
           <p>Ongoing strategic guidance and prompt communication to help you make informed decisions.</p>
         </div>
 
-        <!-- Pillar 3 -->
         <div class="about-pillar-card">
           <div class="pillar-icon-wrapper">
-            <!-- Personal/User Leadership Icon -->
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
@@ -763,7 +764,6 @@
           <h3>Boutique & Personal</h3>
           <p>Direct access to senior leadership — no being passed around between junior account managers.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -853,7 +853,7 @@
             <span class="tag">Catering & Services</span>
             <span class="tag">Motor Industry</span>
             <span class="tag">Manufacturing</span>
-            <span class="tag">Printing & Publishing</span>
+            <span class="tag">Printing</span>
             <span class="tag">Security & Cleaning</span>
           </div>
         </div>

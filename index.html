@@ -1,0 +1,365 @@
+Below is a clean single-page site layout design built using standard HTML and CSS. It features a modern layout matching typical Irish accounting firm sites (navigation, hero banner, core sections, principal bio, and contact footer) while using the color palette from the Pivotal Accounting logo (navy blue `#102B4E` with subtle slate accents).
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pivotal Accounting Services | Maynooth, Co. Kildare</title>
+  <style>
+    :root {
+      --primary: #102B4E;
+      --secondary: #2C4D75;
+      --accent: #EBF1F7;
+      --text-dark: #222222;
+      --text-muted: #555555;
+      --bg-light: #F8FAFC;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--white);
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #E2E8F0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-subtext {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Layout Sections */
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .bg-light {
+      background-color: var(--bg-light);
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .feature-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Industry Tags */
+    .industry-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Contact Callout */
+    .cta-box {
+      background: var(--primary);
+      color: var(--white);
+      padding: 3rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cta-box a {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0A1B32;
+      color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      nav ul {
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div>
+        <a href="#" class="logo-text">Pivotal</a>
+        <span class="logo-subtext">Accounting &bull; Tax &bull; Advisory</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">Who We Are</a></li>
+          <li><a href="#why-us">Why Choose Us</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#principal">Principal Profile</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Accounting & Advisory for Growing Businesses</h1>
+      <p>Tailored accounting and strategic advisory services based in Maynooth, Co. Kildare.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p>Pivotal Accounting Services is a boutique accounting and business advisory firm based in Maynooth, Co. Kildare[cite: 1].</p>
+      <br>
+      <p>We provide tailored accounting and business advisory services to SMEs and owner-managed businesses[cite: 1]. With over 20 years’ experience working closely with businesses and their owners, we understand the importance of having accurate, up-to-date financial information when you need it[cite: 1].</p>
+      <br>
+      <p>Our role goes beyond simply preparing accounts[cite: 1]. We work alongside you to provide the insight, advice, and support you need to make informed decisions and move your business forward with confidence[cite: 1].</p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-us" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Why Choose Pivotal Accounting Services?</h2>
+      <p>Our mission is simple: <strong>to make running your business easier[cite: 1].</strong></p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Regular Communication</h3>
+          <p>We believe accounting should be about much more than an annual meeting to review financial statements[cite: 1]. Whether by phone, email, or in person, we focus on regular contact to keep up to date with your progress[cite: 1].</p>
+        </div>
+        <div class="feature-card">
+          <h3>Business Flexibility</h3>
+          <p>In an ever-changing economy, a rigid approach makes it harder to respond to challenges[cite: 1]. We help you put the right structures in place while giving you the flexibility to adapt and pivot[cite: 1].</p>
+        </div>
+        <div class="feature-card">
+          <h3>Responsive Service</h3>
+          <p>When you have a question, you want a clear answer quickly[cite: 1]. We pride ourselves on being responsive, approachable, and solutions-focused to keep your business moving forward[cite: 1].</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container grid-2">
+      <div>
+        <h2 class="section-title">Transparent, Flexible Pricing</h2>
+        <p>We believe professional advice should come with clear and transparent pricing[cite: 1]. Our fees are based on the complexity of the work involved and the time required to complete it[cite: 1].</p>
+        <br>
+        <p>Before any work begins, we agree on the scope and associated fees with you so you know exactly what to expect[cite: 1]. If additional work becomes necessary, we discuss it and agree on the cost in advance[cite: 1]. No surprises[cite: 1].</p>
+      </div>
+      <div>
+        <h2 class="section-title">Spread Your Fees</h2>
+        <p>We understand that managing an annual accounting bill can be challenging for some businesses[cite: 1]. To make things easier, we offer flexible payment options, including the ability to spread your fees into instalments that suit your business[cite: 1].</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principal Profile -->
+  <section id="principal" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Principal Profile</h2>
+      <h3>Barry Smyth BBS ACA</h3>
+      <p><em>Founder and Managing Partner</em></p>
+      <br>
+      <p>Barry is the founder and Managing Partner of Pivotal Accounting[cite: 1]. Having completed a Bachelor of Business Studies, he began working in the Taxation division of a medium-sized accounting firm while completing his Institute of Chartered Accountants exams[cite: 1]. He later moved to senior financial roles in the SME market, serving as Financial Controller and Group Finance Director[cite: 1].</p>
+      <br>
+      <p>During his 20+ years working within the SME market, Barry gained extensive insight into what makes a business a success and the internal and external factors that challenge growth[cite: 1].</p>
+      
+      <h4 style="margin-top: 1.5rem; color: var(--primary);">Industry Experience Includes:</h4>
+      <div class="industry-list">
+        <span class="tag">Construction</span>
+        <span class="tag">Sales & Distribution</span>
+        <span class="tag">Waste Management</span>
+        <span class="tag">Recruitment</span>
+        <span class="tag">Catering & Services</span>
+        <span class="tag">Motor Industry</span>
+        <span class="tag">Manufacturing</span>
+        <span class="tag">Printing Industry</span>
+        <span class="tag">Security & Cleaning</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Callout -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Thinking of Changing Accountants?</h2>
+        <p>Changing accountants doesn't have to be complicated[cite: 1]. We will take care of the transition to ensure a smooth, stress-free handover[cite: 1].</p>
+        <br>
+        <p>If you're looking for an accountant who is approachable, responsive, and genuinely interested in your business, talk to us today[cite: 1].</p>
+        <br>
+        <p>Email us at: <a href="mailto:info@pivotalaccounting.ie">info@pivotalaccounting.ie</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Pivotal Accounting Services. Maynooth, Co. Kildare[cite: 1]. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+```

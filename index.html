@@ -251,23 +251,24 @@
       gap: 1.5rem;
     }
 
-    /* Enhanced Two-Tone Pivotal Logo "O" Arrow Bullet */
-    .value-item {
-      position: relative;
-      padding-left: 2.8rem;
-    }
+    /* High-Sharpness Two-Tone Pivotal Bullet Icons */
+.value-item {
+  position: relative;
+  padding-left: 2.6rem;
+}
 
-    .value-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.1rem;
-      width: 28px;
-      height: 28px;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 18 56 A 34 34 0 0 0 84 50 L 84 66 L 100 48 L 74 36 L 80 48 A 22 22 0 0 1 28 56 Z" fill="%23102B4E"/><path d="M 82 44 A 34 34 0 0 0 16 50 L 16 34 L 0 52 L 26 64 L 20 52 A 22 22 0 0 1 72 44 Z" fill="%235A6B82"/></svg>');
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
+.value-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 24px;
+  height: 24px;
+  /* SVG: Clean crisp circular arrows using primary navy (#102B4E) and slate grey (#5A6B82) */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke="%235A6B82"/><path d="M 8 12 L 11 15 L 16 9" stroke="%23102B4E"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
     .value-item h4 {
       font-size: 1.1rem;
@@ -520,6 +521,70 @@
         grid-template-columns: 1fr;
       }
     }
+    /* About Highlights Single-Row Grid */
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.about-pillar-card {
+  background: var(--white);
+  padding: 1.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--grey-border);
+  box-shadow: 0 4px 12px rgba(16, 43, 78, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 43, 78, 0.08);
+}
+
+.pillar-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background-color: var(--grey-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--grey-border);
+}
+
+.pillar-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--primary);
+  stroke-width: 2;
+  fill: none;
+}
+
+.about-pillar-card h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-pillar-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Responsive adjustment for tablets & mobile */
+@media (max-width: 850px) {
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
   <!-- Google Local Business Schema -->
 <script type="application/ld+json">
@@ -637,7 +702,7 @@
   </div>
 
   <!-- Who We Are -->
-  <!-- Who We Are / About Section -->
+  <!-- About Pivotal Accounting Section -->
   <section id="about" class="bg-light">
     <div class="container">
       <div style="max-width: 850px; margin: 0 auto; text-align: center;">
@@ -656,26 +721,49 @@
         </p>
       </div>
 
-      <!-- Quick Capability Pillars -->
-      <div class="features-grid" style="margin-top: 3rem;">
-        <div class="feature-card" style="text-align: center;">
-          <h3 style="font-size: 1.1rem; color: var(--primary);">20+ Years SME Insight</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-            Decades of senior commercial experience serving diverse Irish industries.
-          </p>
+      <!-- Single-Row Capability Pillars with Icons -->
+      <div class="about-pillars-grid">
+        
+        <!-- Pillar 1 -->
+        <div class="about-pillar-card">
+          <div class="pillar-icon-wrapper">
+            <!-- Award/Trust Icon -->
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+            </svg>
+          </div>
+          <h3>20+ Years SME Insight</h3>
+          <p>Decades of commercial experience serving diverse Irish industries and owner-managed firms.</p>
         </div>
-        <div class="feature-card" style="text-align: center;">
-          <h3 style="font-size: 1.1rem; color: var(--primary);">Proactive Advisory</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-            Ongoing contact and strategic support when you need to make prompt decisions.
-          </p>
+
+        <!-- Pillar 2 -->
+        <div class="about-pillar-card">
+          <div class="pillar-icon-wrapper">
+            <!-- Strategic Growth/Chart Icon -->
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Proactive Advisory</h3>
+          <p>Ongoing strategic guidance and prompt communication to help you make informed decisions.</p>
         </div>
-        <div class="feature-card" style="text-align: center;">
-          <h3 style="font-size: 1.1rem; color: var(--primary);">Boutique & Personal</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-            Direct access to senior leadership — no being passed around junior teams.
-          </p>
+
+        <!-- Pillar 3 -->
+        <div class="about-pillar-card">
+          <div class="pillar-icon-wrapper">
+            <!-- Personal/User Leadership Icon -->
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>Boutique & Personal</h3>
+          <p>Direct access to senior leadership — no being passed around between junior account managers.</p>
         </div>
+
       </div>
     </div>
   </section>
